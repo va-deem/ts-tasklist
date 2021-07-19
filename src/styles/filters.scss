@@ -43,7 +43,6 @@
 
     .filters__group_list {
       padding: 0;
-      //margin: 0 0 2em 0;
       margin: 0;
       list-style: none;
 
@@ -144,6 +143,10 @@
       top: 1.3em;
       right: 3.9em;
       background-color: $green;
+    }
+
+    .react-datepicker-wrapper {
+      width: 100%;
     }
   }
 }
