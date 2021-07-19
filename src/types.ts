@@ -1,13 +1,13 @@
 export interface ITaskCard {
-  creator: string; // автор
-  created: number; // дата создания
-  dateEnd: number; // дата завершения
-  dateStart: number; //дата начала
+  creator: string;
+  created: number;
+  dateEnd: number;
+  dateStart: number;
   id: number;
-  // performers: title; // исполнитель
+  // performers: title;
   performers: string;
-  subTaskCount: [number, number, number]; // количество подзадач
-  tags?: Array<string>; // Теги задачи
-  title: string; // название задачи
-  type: string; // вид задачи
+  subTaskCount: [number, number, number];
+  tags?: Array<string>;
+  title: string;
+  type: string;
 }

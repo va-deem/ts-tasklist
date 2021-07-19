@@ -1,10 +1,210 @@
-.navmenu__container {
-  width: 200px;
-  height: 100%;
-  padding: 1em;
-  background-color: yellow;
+@import "styles/variables";
+@import "styles/filters";
+@import "styles/navmenu";
 
-  ul {
-    list-style: none;
+.App {
+  display: flex;
+  height: 100%;
+}
+
+.page-content-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+
+  .content-header {
+    padding: 0 1em;
+    background-color: $content-bg-secondary;
+  }
+
+  .page_tasks_wrapper {
+    display: flex;
+
+    .tasks {
+      width: 100%;
+      padding: 1.5em 1em;
+
+      .tasks__header {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+
+        .header__title {
+          flex-grow: 1;
+        }
+
+        .header__status-new {
+          margin-right: 3em;
+        }
+      }
+
+      .tasklist {
+        overflow-y: hidden;
+        list-style: none;
+
+        .tasklist__item {
+          cursor: pointer;
+
+          .item__content {
+            position: relative;
+            width: 100%;
+            padding: .7em .7em 1.5em 2em;
+            margin-bottom: .5em;
+            border:  0.5px solid #F5F5F5;
+            border-radius: 0.8em;
+            background-color: $white;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+
+            .item__header {
+              margin-bottom: .3em;
+              color: $grey;
+              font-size: $font-size-small;
+
+              .header-tag {
+                display: inline-block;
+                padding: 0.2em 0.4em;
+                margin: 0 .4em;
+                border-radius: .2em;
+                color: $content-font-primary;
+                background-color: $light-green;
+                font-size: $font-size-small;
+
+                &.green {
+                  background-color: $light-green;
+                }
+
+                &.pink {
+                  background-color: $pink;
+                }
+
+                &.blue {
+                  background-color: $sea-blue;
+                }
+
+                &.azure {
+                  background-color: $azure;
+                }
+
+                &.yellow {
+                  background-color: $dark-yellow;
+                }
+              }
+            }
+
+            .item__description {
+              display: flex;
+              align-items: center;
+              margin-bottom: .7em;
+
+              div:first-child {
+                flex-grow: 1;
+              }
+
+              .priority {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 1.5em;
+                height: 1.5em;
+                margin-left: 0.5em;
+                border-radius: 25%;
+                color: $white;
+                background-color: $light-red;
+                font-size: $font-size-small;
+              }
+
+              .outdated {
+                color: $red;
+              }
+            }
+
+            .item__staff {
+              display: flex;
+              flex-wrap: wrap;
+              margin-bottom: .5em;
+
+              .tasklist__item__author,
+              .tasklist__item__performer {
+                display: inline-flex;
+                align-items: center;
+                min-width: 22em;
+                padding: 0.3em 0.5em;
+                margin: .2em;
+                border-radius: 1em;
+                color: $content-font-secondary;
+                background-color: #EBF0F5;
+                font-size: $font-size-larger;
+
+                .avatar {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 2em;
+                  height: 2em;
+                  margin: 0;
+                  margin-right: 1em;
+                  border-radius: 50%;
+                  color: $white;
+                  background-color: $blue-green;
+                  font-size: $font-size-small;
+                }
+
+                .subitle {
+                  color: $grey;
+                }
+              }
+
+              .tasklist__item__performer {
+                background-color: $light-baige;
+              }
+
+              .tasklist__item__performer {
+                background-color: $light-baige;
+              }
+
+              .tasklist__item__status {
+                align-self: flex-end;
+                margin-left: auto;
+                line-height: 1.8;
+              }
+
+            }
+          }
+
+          .item__footer {
+            position: relative;
+            z-index: -1;
+            display: none;
+            align-items: flex-end;
+            height: 4em;
+            padding: .7em 2em;
+            margin: -2em 0 0.5em 0;
+            border-radius: 0.8em;
+            background-color: $content-bg-secondary;
+            font-size: $font-size-larger;
+            line-height: 1.0;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+
+            img {
+              height: 1em;
+              margin: 0 .2em 0 .7em;
+            }
+
+            .footer-anno {
+              color: $grey;
+              font-size: $font-size-smaller;
+            }
+          }
+
+          &.open {
+            .item__footer {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
   }
 }
+

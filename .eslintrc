@@ -3,9 +3,10 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint", "react", "prettier"],
   "env": {
     "browser": true,
     "es6": true
@@ -20,7 +21,8 @@
     ],
     "@typescript-eslint/no-explicit-any": 1,
     "no-case-declarations": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "prettier/prettier": ["warn", {}, { "usePrettierrc": true }]
   },
   "settings": {
     "react": {

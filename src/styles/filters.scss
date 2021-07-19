@@ -1,0 +1,149 @@
+.filters {
+  width: 22%;
+  min-width: 250px;
+  padding-top: 1.5em;
+  margin-right: 2.9em;
+  margin-left: 2.3em;
+  font-size: $font-size-larger;
+
+  .filters__group:nth-child(2) {
+    margin: 2em 0 1.5em 0;
+  }
+
+  div:nth-child(4),
+  div:nth-child(6) {
+    margin-top: 2em;
+  }
+
+  .filters__group {
+
+    &:last-child {
+      margin-top: 2em;
+    }
+
+    .filters__group_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        margin: 0;
+      }
+
+      .toggleIcon {
+        padding: 1em;
+        margin-right: 1em;
+        cursor: pointer;
+      }
+    }
+
+    .group_subtitle {
+      font-weight: bold;
+    }
+
+    .filters__group_list {
+      padding: 0;
+      //margin: 0 0 2em 0;
+      margin: 0;
+      list-style: none;
+
+      .group_list_item {
+        display: inline-block;
+        padding: 0.4em 0.8em;
+        margin: .2em;
+        border-radius: 1em;
+        color: $content-font-secondary;
+        background-color: $white;
+        font-size: $font-size-larger;
+        cursor: pointer;
+
+        &.active {
+          color: $white;
+          background-color: $green;
+        }
+      }
+    }
+
+    &.close {
+      .toggleIcon {
+        transform: rotate(180deg);
+      }
+
+      .group_subtitle,
+      .filters__group_list {
+        display: none;
+      }
+    }
+  }
+
+  .filters__select,
+  .filters__date,
+  .filters__text {
+    label {
+      margin-bottom: .2em;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: .6em 0;
+      margin: .3em 0 .6em 0;
+      border: none;
+      border-bottom: 1px solid gray;
+      color: $grey;
+      background-color: $content-bg-primary;
+      appearance: none;
+
+      &:focus {
+        padding-left: .5em;
+      }
+    }
+
+    select {
+      width: 100%;
+      padding: .6em 0;
+      margin: .3em 0 .6em 0;
+      border: none;
+      border-bottom: 1px solid gray;
+      color: $grey;
+      background: url("/assets/images/select-arrow.svg") no-repeat right 2em top 50%;
+      appearance: none;
+
+      option {
+        color: $content-font-secondary;
+      }
+
+      &:focus {
+        padding-left: .5em;
+      }
+    }
+
+    input[type="text"] {
+      background: $content-bg-primary url("/assets/images/text-filter.svg") no-repeat;
+      background-position: right 1.5em top 50%;
+    }
+
+    input.datepicker-input {
+      background: $content-bg-primary url("/assets/images/date-filter.svg") no-repeat;
+      background-position: right 1.5em top 50%;
+      appearance: none;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+      }
+
+      &:before {
+        content: attr(placeholder);
+      }
+    }
+
+    .react-datepicker__close-icon:after {
+      position: absolute;
+      top: 1.3em;
+      right: 3.9em;
+      background-color: $green;
+    }
+  }
+}
